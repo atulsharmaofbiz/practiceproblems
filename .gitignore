@@ -1,0 +1,12 @@
+*.iml
+*.ipr
+*.iws
+/.idea
+*/target/*
+data/*
+mnt/*
+pom.xml.bak
+web/data
+dump.rdb
+.DS_Store
+web/src/main/resources/config/application-dev.yml
