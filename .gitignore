@@ -2,11 +2,13 @@
 *.ipr
 *.iws
 /.idea
+target/*
 */target/*
 data/*
 mnt/*
 pom.xml.bak
 web/data
 dump.rdb
+*.log
 .DS_Store
 web/src/main/resources/config/application-dev.yml
