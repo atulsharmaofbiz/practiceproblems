@@ -1,10 +1,7 @@
-package com.example;
+package com.example.problem1;
 
-import com.google.common.collect.Collections2;
-import com.google.common.collect.ImmutableList;
 import org.apache.log4j.Logger;
 
-import java.util.AbstractCollection;
 import java.util.ArrayList;
 import java.util.List;
 
@@ -21,7 +18,7 @@ public class Application
 
         Runnable start = getRunnable("start",logger);
         List<Runnable> parallelTasks = new ArrayList<>();
-        for(int i=0;i<10;i++){
+        for(int i=0;i<100;i++){
             parallelTasks.add(getRunnable("task"+i,logger));
         }
         Runnable end = getRunnable("end",logger);
@@ -36,8 +33,8 @@ public class Application
         return new Runnable() {
             @Override
             public void run() {
-                if(name.contains("1"))
-                    throw new RuntimeException("Exception in parallel task");
+                /*if(name.contains("1"))
+                    throw new RuntimeException("Exception in parallel task");*/
                 logger.info(name);
             }
         };
