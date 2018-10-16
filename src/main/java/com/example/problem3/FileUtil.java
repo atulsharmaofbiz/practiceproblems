@@ -8,12 +8,11 @@ public class FileUtil {
 
     private static final int BUFFER_SIZE=4096;
 
-    public int copyLargeWithOffset(InputStream input,byte[] buffer)throws IOException{
+    public int copy(InputStream input,byte[] buffer)throws IOException{
         return input.read(buffer);
     }
 
     public void copyLarge(File src,File tgt) throws FileNotFoundException,IOException {
-        int offset=0;
         if(!src.exists())
             throw new FileNotFoundException();
         if(tgt.exists()){
@@ -29,9 +28,8 @@ public class FileUtil {
             byte[] buffer = new byte[BUFFER_SIZE];
             long cnt = 1;
             while (cnt > 0) {
-                    cnt = copyLargeWithOffset(is, buffer);
+                    cnt = copy(is, buffer);
                     os.write(buffer);
-                    offset += cnt;
             }
             os.flush();
             tempFile.renameTo(tgt);
