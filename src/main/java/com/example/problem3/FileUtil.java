@@ -41,14 +41,10 @@ public class FileUtil {
 
     }
 
-
-
-
     private static File getTempFile() {
         String tempDir=System.getenv("TMPDIR");
         return new File(tempDir+"/"+ UUID.randomUUID());
     }
-
 
     public static void main(String[] args) {
         FileUtil fileUtil = new FileUtil();
