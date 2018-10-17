@@ -1,6 +1,5 @@
 package com.example.problem3;
 
-import com.google.common.io.Files;
 import java.io.*;
 import java.util.UUID;
 
@@ -19,7 +18,6 @@ public class FileUtil {
             tgt.delete();
         }
         File tempFile = getTempFile();
-        long size=src.length();
         BufferedOutputStream os = null;
         BufferedInputStream is = null;
         try {
